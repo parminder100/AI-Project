@@ -1,0 +1,73 @@
+.ai-tools-section{
+    padding-top: 50px;
+}
+.aidaptive-tool-content{
+    background-color: #381e5c;
+    color: #fff;
+    padding:20px;
+}
+.ai-tool-name{
+    margin-bottom: 10px;
+    font-size: 23px;
+    font-weight: 600;
+}
+.ai-tools-rating{
+    display: flex;
+    gap:4px;
+    color:#faaf00;
+    align-items: center;
+    margin-bottom: 4px;
+}
+.rating-number{
+    color:rgb(158, 158, 158);
+}
+.aidaptive-tool-image{
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.aidaptive-tool-content{
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+.aitools-price{
+    position: relative;
+}
+.aitools-price i{
+    padding-right: 5px;
+}
+.aitools-price-content{
+    background-color: #8a2be2;
+    padding: 7px;
+    max-width: 92px;
+    border-radius: 8px;
+    font-size: 0.8125rem;
+    border: 1px solid #af6bed;
+    margin-bottom: 15px;
+}
+.ai-tool-description{
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+.aitools-type{
+    margin-bottom: 40px;
+}
+.aitools-link-btn{
+    padding: 7px 80px 7px 80px;
+    border-width: 0px;
+    border-radius: 8px;
+    color: #FFF;
+    background-color: #5289ed;
+}
+.aitools-link-btn-content{
+    text-align: center;
+}
+.ai-image-content{
+    position: relative;
+}
+.favourite-ai-tool{
+    position: absolute;
+    color:#fff;
+    font-size: 24px;
+    right:8px;
+    top:27px;
+}
