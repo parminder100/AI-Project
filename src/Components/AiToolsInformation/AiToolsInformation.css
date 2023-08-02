@@ -1,0 +1,74 @@
+.ai-tool-information{
+    padding-top: 100px;
+}
+.ai-tool-name{
+    font-size: 35px;
+    color: #fff;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+.product-information-heading{
+    font-size: 18px;
+    color:#808080;
+    font-weight: 600;
+}
+.ai-tool-image{
+    border-radius: 16px;
+}
+.aitool-description{
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 40px;
+}
+.ai-tool-bage-content{
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.ai-badge-description{
+    color: #fff;
+    font-size: 18px;
+}
+.fa-check-circle{
+    font-size: 18px;
+    color: #4d94ef;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+.ai-tool-add-date{
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+.fa-calendar{
+    font-size: 18px;
+    color:#4d94ef;
+}
+.ai-tool-date{
+    font-size: 18px;
+    color: #fff;
+}
+.aitools-type-content{
+    padding: 7px;
+    max-width: 92px;
+    border-radius: 8px;
+    font-size: 0.8125rem;
+    border: 1px solid #4d94ef;
+    margin-bottom: 15px;
+}
+.aitools-api-content{
+    padding: 5px;
+    max-width: 56px;
+    border-radius: 8px;
+    font-size: 0.8125rem;
+    border: 1px solid #4d94ef;
+}
+.aitools-type-icon{
+    position: relative;
+    color: #fff;
+}
+.aitools-type-icon i{
+    padding-right: 5px;
+}

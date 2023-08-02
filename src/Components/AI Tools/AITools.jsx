@@ -1,23 +1,78 @@
 import "../AI Tools/AITools.css";
 import {AIToolsData} from "../AI Tools Data/AIToolsData";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { setFavourite } from "../Store/Store";
+import {useDispatch, useSelector} from "react-redux";
+import { useState } from "react";
+import Banner from "../Banner/Banner";
+import Header from "../Header/Header";
 
 const AITools = () =>{
+    const dispatch = useDispatch();
+    const favouriteTools = useSelector((state)=> state.favorite);
+    const navigate = useNavigate();
+
+    const isToolInFavorites = (aiTool) =>{
+        return favouriteTools.some((tool)=> tool.id === aiTool.id);
+    }
+
+    const [isHeartFilled, setIsHeartFilled] = useState(false);
+    const [showAddPopup, setShowAddPopup] = useState(false);
+    const [showRemovePopup, setShowRemovePopup] = useState(false);
+    const [searchAiTool, setSearchAiTool] = useState("");
+
+    const togglePopup = (aiTool) =>{
+        if(isToolInFavorites(aiTool)){
+            setShowAddPopup(false);
+            setShowRemovePopup(true);
+        }
+        else{
+            setShowAddPopup(true);
+            setShowRemovePopup(false);
+        }
+    }
+
+    const hidePopupAfterDelay = () =>{
+        setTimeout(()=>{
+            setShowAddPopup(false);
+            setShowRemovePopup(false);
+        },3000);
+    }
+
+    const handleAiChange = (e) =>{
+        setSearchAiTool(e.target.value);
+    }
+
+    const filteredAiTool = AIToolsData.filter((item)=> item.aiName.toLowerCase().includes(searchAiTool.toLowerCase()));
+
+    const handleAiTool = (slectedTool) =>{
+        navigate(`/ai-tools-information/${slectedTool.id}`);
+    }
     return(
         <>
+            <Header handleAiChange={handleAiChange} searchAiTool={searchAiTool} />
+            <Banner />
+            <p className="view-categories"><Link to="/ai-tools">View all categories</Link></p>
             <section className="ai-tools-section">
                 <div className="container">
+                    {showAddPopup && <p className={`popup ${showAddPopup ? "popup-show" : ""}`}>item saved to favourite list</p>}
+                    {showRemovePopup && <p className={`removedpopup ${showRemovePopup ? "removedpopup-show" : ""}`}>Item removed from the favourite list</p>}
                     <div className="row">
                         {
-                            AIToolsData.map((item)=>(
+                            filteredAiTool.map((item)=>(
                                 <div className="col-sm-4">
-                                    <div className="ai-box-content">
+                                    <div className="ai-box-content" onClick={()=>handleAiTool(item)}>
                                         <div className="ai-image-content">
                                             <img className="w-100 aidaptive-tool-image" src={item.aiImage} alt="aidaptive_tool.jpg" />
-                                            <div className="favourite-ai-tool" >
-                                                    <i
-                                                        className="fas fa-heart"
-                                                    ></i>
+                                            <div className={`favourite-ai-tool ${isToolInFavorites(item) ? "filled" : ""} ${isHeartFilled ? "heart-filled" : ""}`} onClick={()=>{console.log("Clicked AI Tool:", item); dispatch(setFavourite(item)); setIsHeartFilled(!isHeartFilled); hidePopupAfterDelay(); togglePopup(item);}}>
+                                                {
+                                                    isToolInFavorites(item) ?(
+                                                        <i className="fas fa-heart"></i>
+                                                    ):
+                                                    (
+                                                        <i className="far fa-heart"></i>
+                                                    )
+                                                }
                                             </div>
                                         </div>
                                         <div className="aidaptive-tool-content">

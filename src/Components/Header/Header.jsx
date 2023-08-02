@@ -4,22 +4,48 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import "../Header/Header.css";
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import bannerVideo from "../assets/video/bannerVideo.mp4";
+import { useEffect, useState } from "react";
 
-const Header = () =>{
+const Header = ({handleAiChange, searchAiTool}) =>{
+    const [showInputField, setShowInputField] = useState(false);
+    const [showHeaderBackground, setShowHeaderBackground] = useState(false);
+    const handleShowInputField = () =>{
+        setShowInputField(!showInputField);
+    }
+    useEffect(()=>{
+        const handleHeaderBackground = () =>{
+            if(window.scrollY >= 50){
+                setShowHeaderBackground(true);
+            }
+            else{
+                setShowHeaderBackground(false);
+            }
+        }
+
+        window.addEventListener("scroll",handleHeaderBackground);
+
+        return () =>{
+            window.removeEventListener("scroll", handleHeaderBackground);
+        }
+    },[]);
+
     return(
         <>
-            <header>
+            <header className={`${showHeaderBackground ? "header-bg-color" : ""}`}>
                 <div className="container">
                     <div className="row align-items-center header-row">
-                        <div className="col-sm-6 left-col">
+                        <div className="col-sm-3 left-col">
                             <img src={logo} alt="logo.png" />
                         </div>
-                        <div className="col-sm-6 right-col">
+                        <div className="col-sm-9 right-col">
                         <Navbar expand="lg">
                                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                                 <Navbar.Collapse id="basic-navbar-nav">
                                 <Nav className="me-auto">
+                                    <Nav.Link>
+                                        <input className={`aitool-input ${showInputField ? "visible-input" : ""}`} style={{width: showInputField ? "200px" : ""}} type="text" value={searchAiTool} onChange={handleAiChange} />
+                                        <i className="fa fa-search" onClick={handleShowInputField} style={{color: showInputField ? "#000" : ""}}></i>
+                                    </Nav.Link>
                                     <Nav.Link href="/">Home</Nav.Link>
                                     <Nav.Link href="#link">About Us</Nav.Link>
                                     <Nav.Link href="#link">Blog</Nav.Link>
@@ -32,24 +58,6 @@ const Header = () =>{
                     </div>
                 </div>
             </header>
-            <section>
-                <div className="container">
-                    <h1 className="banner-heading">Whatever You want to ask- DEX.AI has the <span className="typewriter"></span></h1>
-                    <p className="banner-text">
-                        Artificial intelligence makes it fast easy to create content for your blog, 
-                        social media, website, and more! Rated 5/5 stars in 3,000+ reviews.
-                    </p>
-                    <div className="btn-content">
-                        <button className="free-trial-btn">start a free trial</button>
-                        <button className="how-dex-work ai-btn text-white">how dex.ai work</button>
-                    </div>
-                    <div>
-                        <video className="banner-video" muted autoPlay loop>
-                            <source src={bannerVideo} type="video/mp4" />
-                        </video>
-                    </div>
-                </div>
-            </section>
         </>
     )
 }

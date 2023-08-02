@@ -1,0 +1,34 @@
+.aitool-categories{
+    padding-top: 100px;
+}
+.all-categories{
+    color: #fff;
+}
+.browse-categories{
+    color:#fff;
+    font-size: 18px;
+}
+.categories-content{
+    padding-bottom: 50px;
+}
+.business-ai-tools{
+    color: #808080;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+.ecommerce-ai-tools{
+    font-size: 24px;
+    text-transform: uppercase;
+}
+.ecommerce-ai-tools a{
+    text-decoration: none;
+    color: #fff;
+}
+.ecommerce-ai-tools span{
+    margin-left: 15px;
+    font-size: 20px;
+    text-transform: lowercase;
+}
+.ecommerce-ai-tools a:hover{
+    color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));
+}
