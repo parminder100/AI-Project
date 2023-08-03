@@ -11,9 +11,10 @@
     margin-bottom: 10px;
     font-size: 23px;
     font-weight: 600;
-}
-.ai-box-content{
     cursor: pointer;
+}
+.ai-box-content:hover .ai-tool-name{
+    color: rgb(56,189,248);
 }
 .ai-tools-rating{
     display: flex;
@@ -21,6 +22,7 @@
     color:#faaf00;
     align-items: center;
     margin-bottom: 4px;
+    cursor: pointer;
 }
 .rating-number{
     color:rgb(158, 158, 158);
@@ -51,6 +53,7 @@
 .ai-tool-description{
     font-size: 16px;
     margin-bottom: 15px;
+    cursor: pointer;
 }
 .aitools-type{
     margin-bottom: 40px;

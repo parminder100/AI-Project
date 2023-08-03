@@ -60,8 +60,8 @@ const AITools = () =>{
                     <div className="row">
                         {
                             filteredAiTool.map((item)=>(
-                                <div className="col-sm-4">
-                                    <div className="ai-box-content" onClick={()=>handleAiTool(item)}>
+                                <div className="col-sm-4 mb-4">
+                                    <div className="ai-box-content">
                                         <div className="ai-image-content">
                                             <img className="w-100 aidaptive-tool-image" src={item.aiImage} alt="aidaptive_tool.jpg" />
                                             <div className={`favourite-ai-tool ${isToolInFavorites(item) ? "filled" : ""} ${isHeartFilled ? "heart-filled" : ""}`} onClick={()=>{console.log("Clicked AI Tool:", item); dispatch(setFavourite(item)); setIsHeartFilled(!isHeartFilled); hidePopupAfterDelay(); togglePopup(item);}}>
@@ -76,8 +76,8 @@ const AITools = () =>{
                                             </div>
                                         </div>
                                         <div className="aidaptive-tool-content">
-                                            <p className="ai-tool-name">{item.aiName}</p>
-                                            <div className="ai-tools-rating">
+                                            <p className="ai-tool-name" onClick={()=>handleAiTool(item)}>{item.aiName}</p>
+                                            <div className="ai-tools-rating" onClick={()=>handleAiTool(item)}>
                                                 {
                                                     item.aiRating.map((starclass, index)=>(
                                                         <i key={index} className={starclass}></i>
@@ -85,7 +85,7 @@ const AITools = () =>{
                                                 }
                                                 <p className="rating-number">({item.aiRating.length})</p>
                                             </div>
-                                            <p className="ai-tool-description">{item.aiDescription}</p>
+                                            <p className="ai-tool-description" onClick={()=>handleAiTool(item)}>{item.aiDescription}</p>
                                             <div className="aitools-price-content">
                                                 <p className="aitools-price"><i className={item.aiPriceType}></i> {item.aiPrice}</p>
                                             </div>

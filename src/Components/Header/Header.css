@@ -14,7 +14,8 @@ body{
     font-family: 'Outfit', sans-serif;
 }
 .header-bg-color{
-    background-color: #808080;
+    background-color: #160042;
+    box-shadow: rgb(14, 165, 233) 0px 0px 10px;
 }
 header{
     /* padding-top:10px; */

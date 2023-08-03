@@ -5,10 +5,12 @@ import {useDispatch, useSelector} from "react-redux";
 import { useState } from "react";
 import { setFavourite } from "../Store/Store";
 import "../EcommerceAiTool/EcommerceAiTool.css";
+import { useNavigate } from "react-router-dom";
 
 const EcommerceAiTool = () => {
     const dispatch = useDispatch();
     const favouriteTools = useSelector((state)=> state.favorite);
+    const navigate = useNavigate();
 
     const isToolInFavorites = (aiTool) =>{
         return favouriteTools.some((tool)=> tool.id === aiTool.id);
@@ -40,6 +42,10 @@ const EcommerceAiTool = () => {
             setShowRemovePopup(false);
         },3000);
     }
+
+    const handleAiTool = (slectedTool) =>{
+        navigate(`/ai-tools-information/${slectedTool.id}`);
+    }
   return (
     <>
         <Header />
@@ -65,8 +71,8 @@ const EcommerceAiTool = () => {
                                 </div>
                             </div>
                             <div className="aidaptive-tool-content">
-                                <p className="ai-tool-name">{item.aiName}</p>
-                                <div className="ai-tools-rating">
+                                <p className="ai-tool-name" onClick={()=>handleAiTool(item)}>{item.aiName}</p>
+                                <div className="ai-tools-rating" onClick={()=>handleAiTool(item)}>
                                     {
                                         item.aiRating.map((starclass, index)=>(
                                             <i key={index} className={starclass}></i>
@@ -74,7 +80,7 @@ const EcommerceAiTool = () => {
                                     }
                                     <p className="rating-number">({item.aiRating.length})</p>
                                 </div>
-                                <p className="ai-tool-description">{item.aiDescription}</p>
+                                <p className="ai-tool-description" onClick={()=>handleAiTool(item)}>{item.aiDescription}</p>
                                 <div className="aitools-price-content">
                                     <p className="aitools-price"><i className={item.aiPriceType}></i> {item.aiPrice}</p>
                                 </div>

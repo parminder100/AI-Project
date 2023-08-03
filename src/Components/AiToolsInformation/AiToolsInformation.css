@@ -18,7 +18,7 @@
 .aitool-description{
     font-size: 18px;
     color: #fff;
-    margin-bottom: 40px;
+    margin-bottom: 15px;
 }
 .ai-tool-bage-content{
     display: flex;
@@ -64,6 +64,19 @@
     border-radius: 8px;
     font-size: 0.8125rem;
     border: 1px solid #4d94ef;
+    margin-bottom: 15px;
+}
+.aitools-visit-website-btn{
+    background-color: transparent;
+    border: 1px solid #4d94ef;
+    border-radius: 8px;
+    color: #fff;
+    padding: 10px;
+    font-size: 14px;
+}
+.aitools-visit-website-btn a{
+    text-decoration: none;
+    color: #fff;
 }
 .aitools-type-icon{
     position: relative;
@@ -71,4 +84,41 @@
 }
 .aitools-type-icon i{
     padding-right: 5px;
+}
+.ecommerce-aitool-left-col{
+    margin-bottom: 50px;
+}
+.ecommerce-aitool-right-col{
+    margin-bottom: 50px;
+}
+.ecommerce-ai-tool-aboutus-heading{
+    font-size: 18px;
+    color: #808080;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.ai-tool-aboutus-description{
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+.ecommerce-ai-tool-features{
+    color: #fff;
+    margin-bottom: 20px;
+}
+.ecommerce-tool-steps-heading{
+    font-size: 24px;
+    color:#fff;
+}
+.ecommerce-tool-steps-description{
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.stockimg-steps{
+    color: #fff;
+}
+.stockimg-steps li{
+    margin-bottom: 15px;
+    margin-top: 15px;
 }
