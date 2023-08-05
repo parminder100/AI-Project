@@ -34,21 +34,37 @@
 .aidaptive-tool-content{
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
+    /* height: 392px; */
+}
+.custome-margin{
+    margin-bottom: 31px;
 }
 .aitools-price{
     position: relative;
+    display: flex;
+    align-items: center;
 }
 .aitools-price i{
     padding-right: 5px;
+    color: #fff;
+    font-size: 13px;
 }
 .aitools-price-content{
     background-color: #8a2be2;
     padding: 7px;
-    max-width: 92px;
+    width: fit-content;
     border-radius: 8px;
     font-size: 0.8125rem;
     border: 1px solid #af6bed;
     margin-bottom: 15px;
+}
+.teal-resume-builder-ai{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.hourly-price{
+    font-size: 15px;
 }
 .ai-tool-description{
     font-size: 16px;
@@ -57,6 +73,11 @@
 }
 .aitools-type{
     margin-bottom: 40px;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap:10px;
+    padding-inline-start: 0px;
 }
 .aitools-link-btn{
     padding: 7px 80px 7px 80px;
@@ -122,3 +143,20 @@
 .view-categories a:hover{
     color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));
 }
+.aidaptive-tool-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 402px;
+}  
+.ai-tool-name,
+.ai-tools-rating,
+.ai-tool-description,
+.aitools-price-content,
+.aitools-type,
+.aitools-link-btn-content {
+    margin-bottom: 10px;
+}  
+.aitools-link-btn-content {
+    margin-top: auto;
+}  

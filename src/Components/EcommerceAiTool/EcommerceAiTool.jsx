@@ -21,7 +21,7 @@ const EcommerceAiTool = () => {
     const [showRemovePopup, setShowRemovePopup] = useState(false);
     // Filter AI tools related to Ecommerce
     const ecommerceAITools = AIToolsData.filter(
-        (item) => item.aiType === "#e-commerce"
+        (item) => item.aiType.includes('#e-commerce')
     );
     console.log(ecommerceAITools);
 
@@ -84,7 +84,13 @@ const EcommerceAiTool = () => {
                                 <div className="aitools-price-content">
                                     <p className="aitools-price"><i className={item.aiPriceType}></i> {item.aiPrice}</p>
                                 </div>
-                                <p className="aitools-type">{item.aiType}</p>
+                                <ul className="aitools-type">
+                                    {
+                                        item.aiType.map((type)=>(
+                                            <li>{type}</li>
+                                        ))
+                                    }
+                                </ul>
                                 <div className="aitools-link-btn-content">
                                     <Link to={item.aiUrl} target="_blank"><button className="aitools-link-btn"><i className="fas fa-external-link-alt"></i></button></Link>
                                 </div>
