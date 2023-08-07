@@ -105,14 +105,24 @@ const AITools = () =>{
                                             {
                                                 item.id !== 5 && item.id !== 6 && item.id !== 7 && item.id !== 8 && item.id !== 10 && 
                                                 item.id !== 12 && item.id !== 13 && item.id !== 14 && item.id !== 15 && 
-                                                item.id !== 16 && item.id !== 17 && item.id !== 19 &&
+                                                item.id !== 16 && item.id !== 17 && item.id !== 19 && item.id !== 22
+                                                && item.id !== 23 && item.id !== 24 && item.id !== 26 && item.id !== 27
+                                                && item.id !== 28 && item.id !== 29 && item.id !== 30 && item.id !== 31 && item.id !== 32
+                                                && item.id !== 34 && item.id !== 35 && item.id !== 36 && item.id !== 40 && item.id !== 41
+                                                && item.id !== 42 && item.id !== 43 && item.id !== 45 && item.id !== 46 && item.id !== 47
+                                                && item.id !== 49 && item.id !== 50 && item.id !== 52 &&
                                                 <div className="aitools-price-content">
                                                     <p className="aitools-price"><i className={item.aiPriceType}></i> {item.aiPrice}</p>
                                                 </div>
                                             }
                                             {
                                                 item.id === 5 || item.id === 7 || item.id === 8 || item.id === 10 || item.id === 12 || 
-                                                item.id === 13 || item.id === 14 || item.id === 15 || item.id === 16 || item.id === 17 ?(
+                                                item.id === 13 || item.id === 14 || item.id === 15 || item.id === 16 || item.id === 17 || 
+                                                item.id === 22 || item.id === 23 || item.id === 24 || item.id === 26 || item.id === 27
+                                                || item.id === 28 || item.id === 29 || item.id === 30 || item.id === 31 || item.id === 32
+                                                || item.id === 34 || item.id === 35 || item.id === 36 || item.id === 40 || item.id === 41
+                                                || item.id === 42 || item.id === 43 || item.id === 45 || item.id === 46 || item.id === 47
+                                                || item.id === 49 || item.id === 50 || item.id === 52 ?(
                                                 <>
                                                     <div className="teal-resume-builder-ai">
                                                         <div className="aitools-price-content">
